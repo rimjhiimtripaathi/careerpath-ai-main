@@ -1,0 +1,292 @@
+.assessment-session {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+}
+
+.assessment-header {
+  background: white;
+  padding: 24px 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.assessment-info h1 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.assessment-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  max-width: 500px;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.assessment-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.webcam-section {
+  grid-column: 1;
+}
+
+.question-section {
+  grid-column: 2;
+}
+
+.completion-section {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.completion-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.completion-card h2 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.completion-card p {
+  margin: 0 0 32px 0;
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.video-options {
+  text-align: left;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.video-options h3 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.option-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.option-label:hover {
+  background: #f3f4f6;
+}
+
+.option-label input[type="radio"] {
+  margin-top: 2px;
+  accent-color: #667eea;
+}
+
+.option-label span {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.processing-info {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.processing-info p {
+  margin: 0 0 12px 0 !important;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.processing-info ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #6b7280;
+}
+
+.processing-info li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.completion-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.submit-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .assessment-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .webcam-section,
+  .question-section {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .assessment-header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .progress-section {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .progress-bar {
+    width: 100%;
+  }
+
+  .assessment-content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .completion-card {
+    padding: 24px;
+    margin: 0 16px;
+  }
+
+  .completion-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .video-options {
+    padding: 20px;
+  }
+
+  .completion-actions {
+    flex-direction: column;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .assessment-info h1 {
+    font-size: 1.25rem;
+  }
+
+  .completion-card {
+    padding: 20px;
+  }
+
+  .completion-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .option-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
